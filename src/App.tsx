@@ -73,18 +73,31 @@ const REASONS: ReasonItem[] = [
 ];
 
 const FACULTY_LIST: FacultyMember[] = [
-  { id: '1', name: 'A. Aswini Priyanka', role: 'Assistant Professor', initials: 'AP', avatarBg: 'bg-teal-100', avatarText: 'text-teal-800' },
-  { id: '2', name: 'Angajala Sriram', role: 'Class Mentor', initials: 'AS', avatarBg: 'bg-violet-100', avatarText: 'text-violet-800' },
-  { id: '3', name: 'Anukuri Krishna Veni', role: 'Counselor', initials: 'AV', avatarBg: 'bg-emerald-100', avatarText: 'text-emerald-800' },
-  { id: '4', name: 'D. Parvathi', role: 'Subject Teacher', initials: 'DP', avatarBg: 'bg-amber-100', avatarText: 'text-amber-800' },
-  { id: '5', name: 'Dr. Gedii Sudhakar', role: 'Professor', initials: 'GS', avatarBg: 'bg-sky-100', avatarText: 'text-sky-800' },
-  { id: '6', name: 'Dr. K. Srinivasa Rao', role: 'Head of Department', initials: 'KR', avatarBg: 'bg-rose-100', avatarText: 'text-rose-800' },
-  { id: '7', name: 'Dr. N.G.K. Murthy', role: 'Professor', initials: 'NM', avatarBg: 'bg-indigo-100', avatarText: 'text-indigo-800' },
-  { id: '8', name: 'Dr. Suresh Babu Mudunuri', role: 'Professor', initials: 'SM', avatarBg: 'bg-teal-100', avatarText: 'text-teal-800' },
-  { id: '9', name: 'K. Sri Vijaya', role: 'Assistant Professor', initials: 'KV', avatarBg: 'bg-pink-100', avatarText: 'text-pink-800' },
-  { id: '10', name: 'K. N. Sunil Varma', role: 'Counselor', initials: 'SV', avatarBg: 'bg-cyan-100', avatarText: 'text-cyan-800' },
-  { id: '11', name: 'M. Bhanu Rajesh Naidu', role: 'Subject Teacher', initials: 'MN', avatarBg: 'bg-purple-100', avatarText: 'text-purple-800' },
-  { id: '12', name: 'Mohan Someswara Jupudi', role: 'Class Mentor', initials: 'MJ', avatarBg: 'bg-emerald-100', avatarText: 'text-emerald-800' },
+  { id: '1', name: 'Angara Satyam', role: 'Faculty', initials: 'AS', avatarBg: 'bg-teal-100', avatarText: 'text-teal-800' },
+  { id: '2', name: 'Anusuri Krishna Veni', role: 'Counselor', initials: 'AK', avatarBg: 'bg-violet-100', avatarText: 'text-violet-800' },
+  { id: '3', name: 'D Parvathi', role: 'Subject Teacher', initials: 'DP', avatarBg: 'bg-emerald-100', avatarText: 'text-emerald-800' },
+  { id: '4', name: 'Dr. Godi Sudhakar', role: 'Professor', initials: 'GS', avatarBg: 'bg-amber-100', avatarText: 'text-amber-800' },
+  { id: '5', name: 'Dr. K. Srinivasa Rao', role: 'Head of Department', initials: 'KS', avatarBg: 'bg-sky-100', avatarText: 'text-sky-800' },
+  { id: '6', name: 'Dr. NGK Murthy', role: 'Professor', initials: 'NM', avatarBg: 'bg-rose-100', avatarText: 'text-rose-800' },
+  { id: '7', name: 'Dr. Suresh Babu Mudunuri', role: 'Professor', initials: 'SM', avatarBg: 'bg-indigo-100', avatarText: 'text-indigo-800' },
+  { id: '8', name: 'Dr.Giridhar Koppisetti', role: 'Faculty', initials: 'GK', avatarBg: 'bg-pink-100', avatarText: 'text-pink-800' },
+  { id: '9', name: 'K Sri Vijaya', role: 'Assistant Professor', initials: 'KV', avatarBg: 'bg-cyan-100', avatarText: 'text-cyan-800' },
+  { id: '10', name: 'K V Sunil Varma', role: 'Counselor', initials: 'SV', avatarBg: 'bg-purple-100', avatarText: 'text-purple-800' },
+  { id: '11', name: 'K V V Satya Trinadh Naidu', role: 'Faculty', initials: 'SN', avatarBg: 'bg-blue-100', avatarText: 'text-blue-800' },
+  { id: '12', name: 'K. Bhanu Rajesh Naidu', role: 'Subject Teacher', initials: 'BN', avatarBg: 'bg-fuchsia-100', avatarText: 'text-fuchsia-800' },
+  { id: '13', name: 'M Sai Madhurya', role: 'Faculty', initials: 'SM', avatarBg: 'bg-teal-100', avatarText: 'text-teal-800' },
+  { id: '14', name: 'M. Suseela', role: 'Faculty', initials: 'MS', avatarBg: 'bg-violet-100', avatarText: 'text-violet-800' },
+  { id: '15', name: 'Mohan Surendra Jaladi', role: 'Class Mentor', initials: 'MJ', avatarBg: 'bg-emerald-100', avatarText: 'text-emerald-800' },
+  { id: '16', name: 'N. Aneela', role: 'Faculty', initials: 'NA', avatarBg: 'bg-amber-100', avatarText: 'text-amber-800' },
+  { id: '17', name: 'N. Navya', role: 'Faculty', initials: 'NN', avatarBg: 'bg-sky-100', avatarText: 'text-sky-800' },
+  { id: '18', name: 'Neti Praveen', role: 'Faculty', initials: 'NP', avatarBg: 'bg-rose-100', avatarText: 'text-rose-800' },
+  { id: '19', name: 'P Manoj', role: 'Faculty', initials: 'PM', avatarBg: 'bg-indigo-100', avatarText: 'text-indigo-800' },
+  { id: '20', name: 'P Mouna', role: 'Faculty', initials: 'PM', avatarBg: 'bg-pink-100', avatarText: 'text-pink-800' },
+  { id: '21', name: 'P S V Surya Kumar', role: 'Faculty', initials: 'SK', avatarBg: 'bg-cyan-100', avatarText: 'text-cyan-800' },
+  { id: '22', name: 'Prudhvi Varma M', role: 'Faculty', initials: 'PV', avatarBg: 'bg-purple-100', avatarText: 'text-purple-800' },
+  { id: '23', name: 'Rohith Kumar Mangineti', role: 'Faculty', initials: 'RM', avatarBg: 'bg-blue-100', avatarText: 'text-blue-800' },
+  { id: '24', name: 'S. Mohan Krishna', role: 'Faculty', initials: 'MK', avatarBg: 'bg-fuchsia-100', avatarText: 'text-fuchsia-800' },
+  { id: '25', name: 'Srinu Manne', role: 'Faculty', initials: 'SM', avatarBg: 'bg-teal-100', avatarText: 'text-teal-800' }
 ];
 
 const PERIODS: PeriodSlot[] = [
@@ -101,7 +114,7 @@ const PERIODS: PeriodSlot[] = [
 export default function App() {
   const [selectedReason, setSelectedReason] = useState<string>('Hackathon');
   const [otherReasonText, setOtherReasonText] = useState('');
-  const [selectedFaculty, setSelectedFaculty] = useState<string[]>(['2']);
+  const [selectedFaculty, setSelectedFaculty] = useState<string[]>([]);
   const [facultySearch, setFacultySearch] = useState('');
   const [isFacultyModalOpen, setIsFacultyModalOpen] = useState(false);
 
