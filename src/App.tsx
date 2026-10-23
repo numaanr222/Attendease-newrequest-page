@@ -100,6 +100,7 @@ const PERIODS: PeriodSlot[] = [
 
 export default function App() {
   const [selectedReason, setSelectedReason] = useState<string>('Hackathon');
+  const [otherReasonText, setOtherReasonText] = useState('');
   const [selectedFaculty, setSelectedFaculty] = useState<string[]>(['2']);
   const [facultySearch, setFacultySearch] = useState('');
   const [isFacultyModalOpen, setIsFacultyModalOpen] = useState(false);
@@ -153,14 +154,14 @@ export default function App() {
   }, [requestType, selectedPeriods, startDate, endDate]);
 
   const stepStatus = useMemo(() => {
-    const hasReason = Boolean(selectedReason);
+    const hasReason = selectedReason === 'Other' ? otherReasonText.trim().length > 0 : Boolean(selectedReason);
     const hasFaculty = selectedFaculty.length > 0;
     const hasDuration =
       requestType === 'Short' ? selectedPeriods.length > 0 : Boolean(startDate && endDate);
     const hasDesc = description.trim().length >= 20;
     const completedCount = [hasReason, hasFaculty, hasDuration, hasDesc].filter(Boolean).length;
     return { hasReason, hasFaculty, hasDuration, hasDesc, completedCount };
-  }, [selectedReason, selectedFaculty, requestType, selectedPeriods, startDate, endDate, description]);
+  }, [selectedReason, otherReasonText, selectedFaculty, requestType, selectedPeriods, startDate, endDate, description]);
 
   const isFormValid = stepStatus.completedCount === 4;
 
@@ -175,6 +176,7 @@ export default function App() {
     setSelectedPeriods([]);
     setDescription('');
     setUploadedFile(null);
+    setOtherReasonText('');
   };
 
   return (
@@ -377,6 +379,28 @@ export default function App() {
                       );
                     })}
                   </div>
+
+                  {/* NEW: Dynamic "Other" Reason Input with 30 char limit */}
+                  {selectedReason === 'Other' && (
+                    <div className="mt-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <label className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                          Please Specify Reason <span className="text-rose-500">*</span>
+                        </label>
+                        <span className={`text-[10px] font-bold ${otherReasonText.length >= 30 ? 'text-rose-500' : 'text-slate-400'}`}>
+                          {otherReasonText.length}/30
+                        </span>
+                      </div>
+                      <input
+                        type="text"
+                        maxLength={30}
+                        value={otherReasonText}
+                        onChange={(e) => setOtherReasonText(e.target.value)}
+                        placeholder="E.g., Family function, Visa interview..."
+                        className="w-full px-4 py-2.5 bg-white/90 border border-slate-200/80 rounded-2xl text-xs sm:text-sm font-medium text-slate-800 focus:bg-white focus:outline-none focus:border-[#0f7685] transition shadow-2xs"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {/* Faculty Selector Trigger & Selected Pills */}
@@ -585,11 +609,12 @@ export default function App() {
                   </h2>
                   <button
                     type="button"
-                    onClick={() =>
+                    onClick={() => {
+                      const displayReason = selectedReason === 'Other' && otherReasonText.trim() ? otherReasonText.trim() : selectedReason;
                       setDescription(
-                        `Requesting official attendance permission for ${selectedReason} on ${permissionDate}. I will complete any missed lab work and coursework promptly.`
+                        `Requesting official attendance permission for ${displayReason} on ${permissionDate}. I will complete any missed lab work and coursework promptly.`
                       )
-                    }
+                    }}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0f7685] hover:underline"
                   >
                     <Sparkles className="w-3.5 h-3.5" />
@@ -775,8 +800,11 @@ export default function App() {
                     <p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">
                       CATEGORY
                     </p>
-                    <p className="text-base sm:text-lg font-extrabold text-slate-800 truncate mt-0.5">
-                      {selectedReason}
+                    <p 
+                      className="text-base sm:text-lg font-extrabold text-slate-800 truncate mt-0.5" 
+                      title={selectedReason === 'Other' && otherReasonText.trim() ? otherReasonText : selectedReason}
+                    >
+                      {selectedReason === 'Other' && otherReasonText.trim() ? otherReasonText : selectedReason}
                     </p>
                   </div>
                 </div>
