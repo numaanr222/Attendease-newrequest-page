@@ -261,7 +261,7 @@ export default function App() {
             {/* Left Greeting & Big Editorial Title */}
             <div>
               <p className="text-xs sm:text-sm font-bold text-teal-600 tracking-tight">
-                Attendance Portal, Mohammad Numaan Raza
+                Attendease Portal, Mohammad Numaan Raza
               </p>
               <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mt-0.5">
                 New Request
